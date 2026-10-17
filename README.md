@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/banner.png" alt="Fuzzy Search Lab: banded edit-distance matrix" width="100%">
+</p>
+
 # Fuzzy Search Lab
 
 一个零依赖的 Python 模糊搜索索引：阈值编辑距离 + 长度分桶 + Unicode 规范化，
