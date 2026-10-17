@@ -13,6 +13,12 @@ sys.path.insert(0, str(ROOT / "src"))
 from fuzzyopt import FuzzySearchIndex, levenshtein, normalize  # noqa: E402
 
 
+# Windows consoles still default to a legacy code page (cp1252); print CJK
+# queries without crashing.
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
+
 def make_corpus(size: int = 12000, seed: int = 20261017) -> list[str]:
     rng = random.Random(seed)
     syllables = [

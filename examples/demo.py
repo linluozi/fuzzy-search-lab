@@ -6,6 +6,13 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from fuzzyopt import FuzzySearchIndex, normalize
 
+
+# Windows consoles still default to a legacy code page (cp1252); print CJK
+# queries without crashing.
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
+
 products = [
     "无线蓝牙耳机", "蓝牙音箱", "机械键盘", "便携显示器",
     "東京旅行指南", "Tokyo Travel Guide", "Café Latte Mug", "咖啡杯",
